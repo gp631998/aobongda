@@ -23,24 +23,38 @@
                                         <span class="prices">{{$product->price}}</span>
                                         <span class="currency"> đ</span>
                                     </div>
-                                    <a href="{{route('product-detail',$product->id)}}" class="btn btn-primary btn-block"><i class="fas fa-search-plus"></i> Chi tiết</a>
+                                    <a href="{{route('product-detail',$product->id)}}" class="btn btn-primary btn-block"><i class="fas fa-search-plus"></i> Mua hàng</a>
                                 </div>
                             </div>
                         </div>
                     @endforeach
                 </div>
             </div>
-            <div class="ao-doi-tuyen">
-                <div class="wrapper-ao-doi-tuyen">
+            <div class="ao-doi-tuyen" style="margin-top: 60px">
+                <div class="wrapper-title-aodoituyen">
                     <h3 class="title-aodoituyen-product">Áo đội tuyển</h3>
                 </div>
                 <div class="row">
-                    <div class="col-md-3">
-                        áo đội tuyển
-                    </div>
+                    @foreach($aodoituyen_products as $product)
+                        <div class="col-md-3">
+                            <div class="doituyen-item">
+                                <div doituyen-item-content>
+                                    <div class="wrapper-image">
+                                        <img class="doituyen-image-intro" src="{{url('/')}}/{{$product->product_image_intro}}">
+                                    </div>
+                                    <h4 class="doituyen-name">{{$product->product_name}}</h4>
+                                    <div class="prices">
+                                        <span class="prices">{{$product->price}}</span>
+                                        <span class="currency"> đ</span>
+                                    </div>
+                                    <a href="{{route('product-detail',$product->id)}}" class="btn btn-primary btn-block"><i class="fas fa-search-plus"></i> Mua hàng</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
-            <div class="ao-logo">
+            <div class="ao-logo" style="margin-top: 60px">
                 <div class="wrapper-ao-logo">
                     <h3 class="title-aologo-product">Áo logo</h3>
                 </div>

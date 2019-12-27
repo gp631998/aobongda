@@ -17,10 +17,10 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css\app.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets\frontend\fonts\fontawesome-free-5.11.2-web\css\all.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/frontend/bootstrap-3.3.7-dist/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/frontend/fonts/fontawesome-free-5.11.2-web/css/all.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/frontend.css') }}" rel="stylesheet">
+    <link href="{{ asset('css\frontend.css') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app">
@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="pull-left">
-                        <p>Chính sách bảo hành sản phẩm và quan điểm phục vụ</p>
+                        <p>Giờ mở cửa: 8:30 - 21:30 các ngày trong tuần</p>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -66,7 +66,7 @@
                 <div class="col-md-3">
                     <div class="area-hotline">
                         <i class="fas fa-phone"
-                           style="display: inline-block;line-height: 24px;vertical-align: middle;background: #ff7e16;font-size: 20px;padding: 5px 25px;border-radius: 5px;margin: 27px">
+                           style="display: inline-block;line-height: 24px;vertical-align: middle;background: #ff7e16;font-size: 20px;padding: 5px 25px;border-radius: 5px;margin: 29px">
                             <span>  0988580741</span>
                         </i>
                         {{csrf_field()}}
@@ -75,15 +75,30 @@
             </div>
         </header>
     </div>
+    @php
+        $list_root_category=DB::table('categories')->where('parent','=',null)->get();
+        $list_sub_category=DB::table('categories')->where('parent','!=',null)->get();
+    @endphp
     <nav class="nav">
         <div class="container">
             <ul class="list-main-menu">
-                <li><a href="{{route('home')}}">Trang chủ</a></li>
-                <li><a href="{{route('gioi-thieu')}}">Giới thiệu</a></li>
-                <li><a href="{{route('lien-he')}}">Liên Hệ</a></li>
-                <li>
-                    <a href="{{route('danh-muc')}}">Danh mục</a>
-                </li>
+                <li ><a href="{{route('home')}}" class="active"> Trang chủ</a></li>
+                @foreach($list_root_category as $root_category)
+                    <li>
+                        <a href="javascript:void(0)">{{$root_category->category_name}}</a>
+                        <ul class="sub-category">
+                            @foreach($list_sub_category as $sub_category)
+                                @if($sub_category->parent==$root_category->id)
+                                    <li style="display: inline">
+                                        <a href="{{route('danh-muc',$sub_category->id)}}">{{$sub_category->category_name}}</a>
+                                    </li>
+                                @endif
+                            @endforeach
+                        </ul>
+                    </li>
+                @endforeach
+                <li ><a href="{{route('gioi-thieu')}}"> Giới thiệu</a></li>
+                <li ><a href="{{route('lien-he')}}"> Liên Hệ</a></li>
             </ul>
         </div>
     </nav>

@@ -27,16 +27,22 @@
                     <th>Category</th>
                     <th>
                         <select name="category_id">
-                            <option value="1">Áo đội tuyển</option>
-                            <option value="2">Áo clb</option>
-                            <option value="3">Áo không logo</option>
+                            <option value="">Chọn danh mục</option>
+                            @foreach($parent_categories as $category)
+                                <optgroup label="{{$category->category_name}}">
+                                    @foreach($subcategories as $sub_category)
+                                        @if ($sub_category->parent==$category->id)
+                                            <option {{ $product->category_id == $sub_category->id ? " selected " : "" }} value="{{$sub_category->id}}">{{$sub_category->category_name}}</option>
+                                        @endif
+                                    @endforeach
+                                </optgroup>
+                            @endforeach
                         </select>
                     </th>
                 </tr>
                 <tr>
                     <th>Publish</th>
                     <th>
-
                         <select name="publish">
                             <option  <?php echo $product->publish==1?' selected ':'' ?> value="1">Yes</option>
                             <option <?php echo $product->publish==0?' selected ':'' ?> value="0">No</option>

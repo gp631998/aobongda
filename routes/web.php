@@ -34,7 +34,9 @@ Route::post("tim-kiem",['as'=>'tim-kiem','uses'=>"CartController@removeItemCart"
 //TODO làm sau giới thiệu liên hệ
 Route::post("gioi-thieu",['as'=>'gioi-thieu','uses'=>"CartController@removeItemCart"]);
 Route::post("lien-he",['as'=>'lien-he','uses'=>"CartController@removeItemCart"]);
+//TODO làm sau
 
+Route::get("danh-muc/{id}",['as'=>'danh-muc','uses'=>"ProductController@getProductsById"]);
 
 
 //++++++++++++++++ BACKEND +++++++++++++++++++++

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use DB;
+use App\Category;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,7 +26,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $aoclb_products=Product::all();
-        return view('home',compact('aoclb_products'));
+        $aoclb_products=DB::table('products')->orderBy('created_at')->get();
+        $aodoituyen_products=DB::table('products')->orderBy('sale_price')->get();
+        return view('home',compact('aoclb_products','aodoituyen_products'));
     }
 }

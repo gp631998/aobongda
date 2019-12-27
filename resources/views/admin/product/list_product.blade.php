@@ -12,7 +12,7 @@
                 <th>Ordering</th>
                 <th>Price</th>
                 <th>Sale_price</th>
-                <th>Size</th>
+                <th>created_at</th>
                 <th>Description</th>
                 <th><a href="{{route('them-san-pham')}}" class="btn btn-primary" >Add new</a></th>
             </tr>
@@ -21,16 +21,16 @@
             @foreach($products as $product)
                 <tr>
                     <td>{{$product->id}}</td>
-                    <td>{{$product->product_name}}</td>
-                    <td><img class="product-image-intro" src="{{url('/')}}/{{$product->product_image_intro}}"></td>
-                    <td>{{$product->publish}}</td>
-                    <td>{{$product->category_id}}</td>
-                    <td>{{$product->ordering}}</td>
-                    <td>{{$product->price}}</td>
-                    <td>{{$product->sale_price}}</td>
-                    <td>{{$product->size}}</td>
-                    <td>{{$product->description}}</td>
-                    <th><a href="{{route('sua-san-pham',$product->id)}}" class="btn btn-primary">Edit</a><a href="{{route('xoa-san-pham',$product->id)}}" class="btn btn-primary">Delete</a></th>
+                    <td nowrap="">{{$product->product_name}}</td>
+                    <td nowrap=""><img class="product-image-intro" src="{{url('/')}}/{{$product->product_image_intro}}"></td>
+                    <td nowrap="">{{$product->publish}}</td>
+                    <td nowrap="">{{$product->category_id}}</td>
+                    <td nowrap="">{{$product->ordering}}</td>
+                    <td nowrap="">{{$product->price}}</td>
+                    <td nowrap="">{{$product->sale_price}}</td>
+                    <td nowrap="">{{date('d-m-Y h:m',strtotime($product->created_at))}}</td>
+                    <td nowrap="">{{$product->description}}</td>
+                    <th nowrap=""><a href="{{route('sua-san-pham',$product->id)}}" class="btn btn-primary">Edit</a><a href="{{route('xoa-san-pham',$product->id)}}" class="btn btn-primary">Delete</a></th>
                 </tr>
             @endforeach
             </tbody>

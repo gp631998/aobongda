@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Category;
+use DB;
+use App\Product;
 class CategoryController extends Controller
 {
     //
@@ -13,11 +15,14 @@ class CategoryController extends Controller
         return view('admin.category.list_category',compact('categories'));
     }
     function getAddCategory(){
-        return view('admin.category.add_category');
+        $list_root_category=DB::table('categories')->where('parent','=',null)->get();
+        $list_sub_category=DB::table('categories')->where('parent','!=',null)->get();
+        return view('admin.category.add_category',compact('list_root_category','list_sub_category'));
     }
     function getEditCategory($id){
         $category=Category::find($id);
-        return view('admin.category.edit_category',compact('category'));
+        $list_root_category=DB::table('categories')->where('parent','=',null)->get();
+        return view('admin.category.edit_category',compact('category','list_root_category'));
     }
     function getDeleteCategory($id,Request $request){
         $category=Category::find($id);

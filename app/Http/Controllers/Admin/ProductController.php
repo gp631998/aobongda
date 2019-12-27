@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Product;
+use App\Category;
 
 class ProductController extends Controller
 {
@@ -18,7 +19,9 @@ class ProductController extends Controller
     }
     function getEditProduct($id){
         $product=Product::find($id);
-        return view('admin.product.edit_item',compact('product'));
+        $parent_categories=Category::query()->where('parent','=',null)->get();
+        $subcategories=Category::query()->where('parent','!=',null)->get();
+        return view('admin.product.edit_item',compact('product','parent_categories','subcategories'));
     }
     function getDeleteProduct($id,Request $request){
         $product=Product::find($id);
