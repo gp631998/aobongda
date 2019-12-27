@@ -26,9 +26,9 @@
                 <th>Category</th>
                 <th>
                     <select name="category_id">
-                        <option value="1">Áo đội tuyển</option>
-                        <option value="2">Áo clb</option>
-                        <option value="3">Áo không logo</option>
+                        <option value="9">Áo đội tuyển</option>
+                        <option value="8">Áo clb</option>
+                        <option value="7">Áo không logo</option>
                     </select>
                 </th>
             </tr>

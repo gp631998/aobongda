@@ -54,10 +54,10 @@
                 </div>
                 <div class="col-md-6">
                     <div class="area-search" style="margin-top: 30px;position: relative">
-                        <form action="{{route('tim-kiem')}}" method="post">
-                            <input type="text" style="padding-right: 40px;" class="form-control keyword" name="keyword"><i
+                        <form  method="post">
+                            <input type="text" style="padding-right: 40px;" class="form-control keyword" name="key"><a href="{{route('search')}}"
                                 style="position: absolute;right: 10px; top: 7px;font-size: 20px;"
-                                class="fas fa-search"></i>
+                                class="fas fa-search"></a>
                             <p><b>Từ khóa</b>: Đồ thể thao</p>
                             {{csrf_field()}}
                         </form>
@@ -81,7 +81,7 @@
     @endphp
     <nav class="nav">
         <div class="container">
-            <ul class="list-main-menu">
+            <ul class="list-main-menu" style="color: red">
                 <li ><a href="{{route('home')}}" class="active"> Trang chủ</a></li>
                 @foreach($list_root_category as $root_category)
                     <li>
@@ -159,9 +159,7 @@
 
     <main class="py-4">
         <div class="container">
-            <div class="menu">
-                make menu here
-            </div>
+
         </div>
         @yield('content')
     </main>

@@ -19,6 +19,7 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 //nút chi tiết sản phẩm
 Route::get("product-detail/{id}",['as'=>'product-detail','uses'=>"ProductController@getDetailProduct"]);
+Route::get('search', ['as' =>'search','uses'=> 'SearchController@getSearch']);
 //thêm hàng
 Route::post("add-to-cart/{id}",['as'=>'add-to-cart','uses'=>"CartController@postAddToCart"]);
 //page mua hàng

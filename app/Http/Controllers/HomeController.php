@@ -6,6 +6,8 @@ use App\Product;
 use DB;
 use App\Category;
 use Illuminate\Http\Request;
+use Cart;
+
 
 class HomeController extends Controller
 {
@@ -26,8 +28,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $aoclb_products=DB::table('products')->orderBy('created_at')->get();
-        $aodoituyen_products=DB::table('products')->orderBy('sale_price')->get();
+        $aoclb_products=DB::table('products')->where('category_id','=',8)->get();
+//        $aodoituyen_products=DB::table('products')->orderBy('category_id','=',9)->get();
+        $aodoituyen_products = DB::table('products')
+            ->where('category_id', '=', 9)
+            ->get();
         return view('home',compact('aoclb_products','aodoituyen_products'));
     }
 }

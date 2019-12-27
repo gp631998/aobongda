@@ -59,6 +59,7 @@
 .list-main-menu > li{
     display: inline;
     margin-left: 5px;
+    color : red;
     float: left;
 }
 .list-main-menu > li a.active,.list-main-menu > li a:hover{

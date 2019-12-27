@@ -29,7 +29,7 @@
                         </div>
                     @endforeach
                 </div>
-            </div>
+
             <div class="ao-doi-tuyen" style="margin-top: 60px">
                 <div class="wrapper-title-aodoituyen">
                     <h3 class="title-aodoituyen-product">Áo đội tuyển</h3>
@@ -56,7 +56,7 @@
             </div>
             <div class="ao-logo" style="margin-top: 60px">
                 <div class="wrapper-ao-logo">
-                    <h3 class="title-aologo-product">Áo logo</h3>
+                    <h3 class="title-aologo-product">Áo không logo</h3>
                 </div>
                 <div class="row">
                     <div class="col-md-3">
