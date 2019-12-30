@@ -60,6 +60,9 @@ Route::group(['prefix'=>'admin','namespace'=>"Admin","middleware"=>"auth"],funct
         Route::get("xoa-san-pham/{id}", ['as' => 'xoa-san-pham', 'uses' => 'ProductController@getDeleteProduct']);
     });
 
+    Route::resource('photos', 'PhotoController');
+
+
     Route::group(['prefix' => 'danh-muc'], function (){
         //root/admin/danh-muc/list-danh-muc
         Route::get("list-danh-muc", ['as'=>'list-danh-muc','uses'=>"CategoryController@getListCategory"]);
