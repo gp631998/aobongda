@@ -30,15 +30,13 @@ class CartController extends Controller
 
         $post=$request->all();
         $customers=new Customers();
-        $customers->first_name=$post['first_name'];
-        $customers->last_name=$post['last_name'];
-        $customers->phone_number=$post['phone_number'];
-        $customers->address=$post['address'];
+        $customers->fill($post);
         $customers->save();
 
         $order=new Orders();
         $order->customer_id=$customers->id;
         $order->total=Cart::total();
+        dd($order->total);
         $order->status="pending";
         $order->save();
         $order_id=$order->id;

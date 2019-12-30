@@ -52,14 +52,16 @@
                     <a href="{{route('home')}}"><img style="width: 150px;height: 100px" class="logo"
                                                      src="{{ asset('assets/frontend/images/logo.png') }}"></a>
                 </div>
-                <div class="col-md-6">
-                    <div class="area-search" style="margin-top: 30px;position: relative">
-                        <form  method="post">
-                            <input type="text" style="padding-right: 40px;" class="form-control keyword" name="key"><a href="{{route('search')}}"
-                                style="position: absolute;right: 10px; top: 7px;font-size: 20px;"
-                                class="fas fa-search"></a>
+                <div class="area-search" style="margin-top: 30px;position: relative">
+                          <form  action="/search">
+                              <div class="form-inline">
+                          <input type="text" style="padding-right: 100px;" class="form-control" name="key">
+                                  <button class="btn btn-primary">Tìm kiếm</button>
+                                                      </div>
+{{--                            <a--}}
+{{--                                style="position: absolute;right: 10px; top: 7px;font-size: 20px;"--}}
+{{--                                class="fas fa-search"></a>--}}
                             <p><b>Từ khóa</b>: Đồ thể thao</p>
-                            {{csrf_field()}}
                         </form>
                     </div>
                 </div>

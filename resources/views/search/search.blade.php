@@ -8,11 +8,11 @@
             <div class="wrapper-title-aoclb">
                 <h3 class="title-aoclb-product">Tìm kiếm</h3>
                 <div class="count-product">
-                    <p class="pull-left">Tìm thấy {{count($product)}} sản phẩm</p>
+                    <p class="pull-left">Tìm thấy {{count($search)}} sản phẩm</p>
                     <div class="clearfix">
             </div>
             <div class="row">
-                @foreach($product as $product)
+                @foreach($search as $product)
                     <div class="col-md-3">
                         <div class="clb-item">
                             <div clb-item-content>

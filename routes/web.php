@@ -19,7 +19,10 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 //nút chi tiết sản phẩm
 Route::get("product-detail/{id}",['as'=>'product-detail','uses'=>"ProductController@getDetailProduct"]);
-Route::get('search', ['as' =>'search','uses'=> 'SearchController@getSearch']);
+
+Route::get('search', 'ProductController@getSearch')->name('get.search');
+
+Route::get('search', ['as' =>'search','uses'=> 'ProductController@getSearch']);
 //thêm hàng
 Route::post("add-to-cart/{id}",['as'=>'add-to-cart','uses'=>"CartController@postAddToCart"]);
 //page mua hàng
@@ -57,13 +60,11 @@ Route::group(['prefix'=>'admin','namespace'=>"Admin","middleware"=>"auth"],funct
         Route::get("xoa-san-pham/{id}", ['as' => 'xoa-san-pham', 'uses' => 'ProductController@getDeleteProduct']);
     });
 
-
-
     Route::group(['prefix' => 'danh-muc'], function (){
         //root/admin/danh-muc/list-danh-muc
         Route::get("list-danh-muc", ['as'=>'list-danh-muc','uses'=>"CategoryController@getListCategory"]);
         //root/admin/danh-muc/them-danh-muc
-        Route::get("them-danh-muc", ['as'=>'them-danh-muc','uses'=>"CategoryController@getAddCategory"]);
+        Route::get("them-danh-muc", ['as'=>'them-danh-muc','uses'=>"CategoryController@getAdd   Category"]);
         //root/admin/danh-muc/them-danh-muc
         Route::post("them-danh-muc", ['as'=>'post-add-category','uses'=>"CategoryController@postAddCategory"]);
         //root/admin/danh-muc/sua-danh-muc

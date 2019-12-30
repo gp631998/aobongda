@@ -34,7 +34,7 @@
                 <tfoot>
                 <tr>
                     <td colspan="5">Tổng</td>
-                    <td>{{Cart::total()}}</td>
+                    <td>{{Cart::subtotal()}}</td>
                 </tr>
                 </tfoot>
             </table>
