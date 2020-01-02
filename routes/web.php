@@ -67,7 +67,7 @@ Route::group(['prefix'=>'admin','namespace'=>"Admin","middleware"=>"auth"],funct
         //root/admin/danh-muc/list-danh-muc
         Route::get("list-danh-muc", ['as'=>'list-danh-muc','uses'=>"CategoryController@getListCategory"]);
         //root/admin/danh-muc/them-danh-muc
-        Route::get("them-danh-muc", ['as'=>'them-danh-muc','uses'=>"CategoryController@getAdd   Category"]);
+        Route::get("them-danh-muc", ['as'=>'them-danh-muc','uses'=>"CategoryController@getAddCategory"]);
         //root/admin/danh-muc/them-danh-muc
         Route::post("them-danh-muc", ['as'=>'post-add-category','uses'=>"CategoryController@postAddCategory"]);
         //root/admin/danh-muc/sua-danh-muc

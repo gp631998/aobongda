@@ -90,7 +90,7 @@
                     <td colspan="2">
                         <div class="pull-right">
                             <button type="submit" class="btn btn-primary">Save</button>
-                            <a href="{{route('danh-sach-san-pham')}}" class="btn btn-primary">Cancel</a>
+                            <a href="{{route('danh-sach-san-pham')}}" class="btn btn-danger">Cancel</a>
                         </div>
                     </td>
                 </tr>

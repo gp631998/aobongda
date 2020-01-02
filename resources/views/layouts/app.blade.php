@@ -53,28 +53,30 @@
                                                      src="{{ asset('assets/frontend/images/logo.png') }}"></a>
                 </div>
                 <div class="area-search" style="margin-top: 30px;position: relative">
-                          <form  action="/search">
+                          <form  action="search">
                               <div class="form-inline">
-                          <input type="text" style="padding-right: 100px;" class="form-control" name="key">
+                          <input type="text" style="padding-right: 100px;width: 560px" class="form-control" name="key">
                                   <button class="btn btn-primary">Tìm kiếm</button>
-                                                      </div>
-{{--                            <a--}}
-{{--                                style="position: absolute;right: 10px; top: 7px;font-size: 20px;"--}}
-{{--                                class="fas fa-search"></a>--}}
-                            <p><b>Từ khóa</b>: Đồ thể thao</p>
+                                  <i class="fas fa-phone"
+                                     style="display: inline-block;line-height: 24px;vertical-align: middle;background: #ff7e16;font-size: 20px;padding: 5px 25px;border-radius: 5px;margin: 29px">
+                                      <span>  0988580741</span>
+                                  </i>
+                              </div>
+
+                   <p><b>Từ khóa</b>: Áo Manchester United</p>
                         </form>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="area-hotline">
-                        <i class="fas fa-phone"
-                           style="display: inline-block;line-height: 24px;vertical-align: middle;background: #ff7e16;font-size: 20px;padding: 5px 25px;border-radius: 5px;margin: 29px">
-                            <span>  0988580741</span>
-                        </i>
-                        {{csrf_field()}}
-                    </div>
-                </div>
-            </div>
+{{--                <div class="col-md-3">--}}
+{{--                    <div class="area-hotline">--}}
+{{--                        <i class="fas fa-phone"--}}
+{{--                           style="display: inline-block;line-height: 24px;vertical-align: middle;background: #ff7e16;font-size: 20px;padding: 5px 25px;border-radius: 5px;margin: 29px">--}}
+{{--                            <span>  0988580741</span>--}}
+{{--                        </i>--}}
+{{--                        {{csrf_field()}}--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+
         </header>
     </div>
     @php
