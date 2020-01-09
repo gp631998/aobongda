@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('admin.layouts.a')
 @section('content')
     <div class="view-list-product">
         <table class="table table-bordered">

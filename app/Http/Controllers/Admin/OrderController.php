@@ -9,9 +9,9 @@ use \Session;
 
 class OrderController extends Controller
 {
-    //
     public function getAllOrder(Request $request){
         $orders=Orders::all();
+
         return view('admin.order.list_order',compact('orders'));
     }
     public function getOrderDetail($id,Request $request){

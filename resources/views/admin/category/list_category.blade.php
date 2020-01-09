@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('admin.layouts.a')
 
 @section('content')
     <div class="view-list-category">
@@ -21,7 +21,7 @@
                     <td>{{$category->parent}}</td>
                     <td><img class="image-category" src="{{url('/')}}/{{$category->image_category}}"></td>
                     <td>{{$category->description}}</td>
-                    <th><a href="{{route('sua-danh-muc',$category->id)}}" class="btn btn-primary">Edit</a><a href="{{route('xoa-danh-muc',$category->id)}}" class="btn btn-primary">Delete</a></th>
+                    <th><a href="{{route('sua-danh-muc',$category->id)}}" class="btn btn-primary">Edit</a><a href="{{route('xoa-danh-muc',$category->id)}}" class="btn btn-danger">Delete</a></th>
                 </tr>
             @endforeach
             </tbody>

@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('admin.layouts.a')
 @section('content')
     <div class="view-list-order">
         <table class="table table-bordered">
@@ -18,13 +18,13 @@
                 <tr>
                     <td>{{$order->id}}</td>
                     <td>{{$order->order_name}}</td>
-                    <td>Customer name</td>
+                    <td></td>
                     <td>{{$order->status}}</td>
                     <td>{{$order->total}}</td>
                     <td><a href="{{route('chi-tiet-don-hang',$order->id)}}" class="btn btn-primary">Xem</a></td>
                     <td>
                         <a href="" class="btn btn-primary">Edit</a>
-                        <a href="" class="btn btn-primary">Delete</a>
+                        <a href="" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
             @endforeach

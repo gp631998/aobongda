@@ -6,7 +6,7 @@
             @if (Session::has('message'))
                 <div class="alert alert-info">{{ Session::get('message') }}</div>
             @endif
-            <div class="ao-clb">
+            <div class="b">
                 <div class="wrapper-title-aoclb">
                     <h3 class="title-aoclb-product">Áo câu lạc bộ</h3>
                 </div>

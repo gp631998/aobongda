@@ -112,11 +112,10 @@
     line-height: 50px;
     background: #C97626;
 }
-.view-home .ao-clb
+.view-home .b
 {
     background: #ffffff;
     margin-top: 20px;
-    height: 400px;
 }
 .view-home .ao-doi-tuyen
 {
@@ -124,7 +123,6 @@
 }
 .view-home .ao-logo
 {
-    height: 400px;
     background: #ffffff;
 }
 h3{
@@ -177,36 +175,35 @@ h3{
     font-weight: 400;
     position: relative;
 }
-.view-home .ao-clb,
 .view-home .ao-doi-tuyen{
     margin-bottom: 20px;
 }
-.view-home .ao-clb .clb-image-intro,
+.view-home .b .clb-image-intro,
 .view-home .ao-doi-tuyen .doituyen-image-intro
 {
     width: 200px;
     padding: 10px;
 }
-.view-home .ao-clb .clb-item,
+.view-home .b .clb-item,
 .view-home .ao-doi-tuyen .doituyen-item
 {
     background: #ccc;
     margin-bottom: 10px;
     border-radius: 10px;
 }
-.view-home .ao-clb .clb-item .clb-item-content,
+.view-home .b .clb-item .clb-item-content,
 .view-home .ao-doi-tuyen .doituyen-item .doituyen-item-content
 {
     padding: 10px;
     position: relative;
 }
-.view-home .ao-clb .clb-name,
+.view-home .b .clb-name,
 .view-home .ao-doi-tuyen .doituyen-name
 {
     margin-top: 10px;
     color: #3f9ae5;
 }
-.view-home .ao-clb .clb-item:hover,
+.view-home .b .clb-item:hover,
 .view-home .ao-doi-tuyen .doituyen-item:hover{
     border: 1px solid #ccc;
 }
@@ -263,37 +260,91 @@ h3{
     font-weight: 400;
     position: relative;
 }
-.view-list-product .ao-clb,
+.view-list-product .b,
 .view-list-product .item-aoclb{
     margin-bottom: 20px;
 }
-.view-list-product .ao-clb .clb-image-intro,
+.view-list-product .b .clb-image-intro,
 .view-list-product .wrapper-title-item-aoclb .doituyen-image-intro
 {
     width: 100%;
     padding: 10px;
 }
-.view-list-product .ao-clb .clb-item,
+.view-list-product .b .clb-item,
 .view-list-product .wrapper-title-item-aoclb .doituyen-item
 {
     background: #ccc;
     margin-bottom: 10px;
     border-radius: 10px;
 }
-.view-list-product .ao-clb .clb-item .clb-item-content,
+.view-list-product .b .clb-item .clb-item-content,
 .view-list-product .item-aoclb .doituyen-item .doituyen-item-content
 {
     padding: 10px;
     position: relative;
 }
-.view-list-product .ao-clb .clb-name,
+.view-list-product .b .clb-name,
 .view-list-product .item-aoclb .doituyen-name
 {
     margin-top: 10px;
     color: #3f9ae5;
 }
-.view-list-product .ao-clb .clb-item:hover,
+.view-list-product .b .clb-item:hover,
 .view-list-product .item-aoclb .doituyen-item:hover{
     border: 1px solid #ccc;
+}
+.footer
+
+{
+    position: relative;
+    min-height: 100%;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #003b6f;
+}
+.searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: #353b48;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.search_input{
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_input{
+    padding: 0 10px;
+    width: 450px;
+    caret-color:red;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_icon{
+    background: white;
+    color: #e74c3c;
+}
+
+.search_icon{
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    text-decoration:none;
 }
 
