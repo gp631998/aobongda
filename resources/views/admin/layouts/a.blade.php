@@ -48,13 +48,13 @@
 
 
         <li data-toggle="collapse" data-target="#listproduct" class="collapsed">
-            <a style="color: white" href="{{route('danh-sach-san-pham')}}"><i class="fa fa-globe fa-lg"></i> List Product <span class="arrow"></span></a>
+            <a style="color: white" href="{{route('danh-sach-san-pham')}}"><i class="fas fa-list"></i> List Product <span class="arrow"></span></a>
         </li>
         <li data-toggle="collapse" data-target="#listcategory" class="collapsed">
-            <a style="color: white" href="{{route('list-danh-muc')}}"><i class="fa fa-globe fa-lg"></i> List Category <span class="arrow"></span></a>
+            <a style="color: white" href="{{route('list-danh-muc')}}"><i class="fas fa-adjust"></i>List Category <span class="arrow"></span></a>
         </li>
         <li style="color: white" data-toggle="collapse" data-target="#listcategory" class="collapsed">
-            <a style="color: white" href="{{route('list-don-hang')}}"><i class="fa fa-globe fa-lg"></i> List Order <span class="arrow"></span></a>
+            <a style="color: white" href="{{route('list-don-hang')}}"><i class="fas fa-dna"></i>List Order <span class="arrow"></span></a>
         </li>
 
         <!-- Divider -->
@@ -82,17 +82,19 @@
                     <i class="fa fa-bars"></i>
                 </button>
 
-                <!-- Topbar Search -->
-                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                    <div class="input-group">
-                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="button">
-                                <i class="fas fa-search fa-sm"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
+               <form action="search1">
+                <div class="area-search" style="margin-top: 30px;position: relative">
+                                        <div class="form-inline">
+                                            <input type="text" style="padding-right: 100px;width: 560px" class="form-control"
+                                                   name="key">
+                                            <button class="btn btn-primary">Tìm kiếm</button>
+                                            <i class="fas fa-phone"
+                                               style="display: inline-block;line-height: 24px;vertical-align: middle;background: #ff7e16;font-size: 20px;padding: 5px 25px;border-radius: 5px;margin: 29px">
+                                                <span>  0988580741</span>
+                                            </i>
+                                        </div>
+                </div>
+               </form>
 
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">

@@ -23,6 +23,11 @@
     <link href="{{ asset('assets/frontend/bootstrap-3.3.7-dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css\frontend.css') }}" rel="stylesheet">
     <link href="{{ asset('css\frontend1.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 </head>
 <body>
 <div id="app">
@@ -39,10 +44,21 @@
                         <ul class="list-controllers">
                             <li style="display: inline"><a href="{{route('gio-hang')}}"><i
                                         class="fas fa-shopping-cart"></i> Giỏ hàng</a></li>
-                            <li style="display: inline"><a href="{{route('dang-nhap')}}"><i
+                            <li style="display: inline"><a href="{{ route('login') }}"><i
                                         class="fas fa-sign-in-alt"></i> Đăng nhập</a></li>
                             <li style="display: inline"><a href="{{route('dang-ky')}}"><i class="fas fa-user"></i> Đăng
                                     ký</a></li>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a><li style="display: inline"><form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                                      style="display: none;">
+                                        @csrf
+                                    </form></li>
+
+                            </div>
                         </ul>
                     </div>
                 </div>
@@ -55,7 +71,6 @@
                                                      src="{{ asset('assets/frontend/images/logo.png') }}"></a>
                 </div>
                 <div class="area-search" style="margin-top: 30px;position: relative">
-                    <form action="search">
 {{--                        <div class="form-inline">--}}
 {{--                            <input type="text" style="padding-right: 100px;width: 560px" class="form-control"--}}
 {{--                                   name="key">--}}
@@ -77,7 +92,6 @@
                         </div>
 
                         <p><b>Từ khóa</b>: Áo Manchester United</p>
-                    </form>
                 </div>
             </div>
             {{--                <div class="col-md-3">--}}

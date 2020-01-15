@@ -99,4 +99,10 @@ class ProductController extends Controller
         }
         return redirect(route('danh-sach-san-pham'));
     }
+    public  function getSearch1(Request $request){
+//        dd($request->input('key'));
+        $products =Product::where('product_name','like','%'.$request->key.'%')->get();
+
+        return view('admin.product.list_product', compact('products'));
+    }
 }

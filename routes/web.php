@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 //++++++++++++++++ FRONTEND ++++++++++++++++++++
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 //nút chi tiết sản phẩm
 Route::get("product-detail/{id}",['as'=>'product-detail','uses'=>"ProductController@getDetailProduct"]);
 
@@ -42,7 +42,10 @@ Route::post("lien-he",['as'=>'lien-he','uses'=>"CartController@removeItemCart"])
 
 Route::get("danh-muc/{id}",['as'=>'danh-muc','uses'=>"ProductController@getProductsById"]);
 
-
+////dangnhap
+//Route::get("dang-nhap", ['as' => 'dang-nhap', 'uses' => 'LoginController@getlogin']);
+//root/admin/san-pham/them
+//Route::post("dang-nhap", ['as' => 'dang-nhap', 'uses' => 'LoginController@postlogin']);
 //++++++++++++++++ BACKEND +++++++++++++++++++++
 Route::group(['prefix'=>'admin','namespace'=>"Admin","middleware"=>"auth"],function(){
     Route::group(['prefix' => 'san-pham'], function (){
@@ -58,6 +61,7 @@ Route::group(['prefix'=>'admin','namespace'=>"Admin","middleware"=>"auth"],funct
         Route::post("sua-san-pham/{id}", ['as' => 'post-sua-san-pham', 'uses' => 'ProductController@postEditProduct']);
         //root/admin/san-pham/xoa-san-pham
         Route::get("xoa-san-pham/{id}", ['as' => 'xoa-san-pham', 'uses' => 'ProductController@getDeleteProduct']);
+        Route::get('', ['as' =>'search1','uses'=> 'Admin\ProductController@getSearch1']);
     });
 
     Route::resource('photos', 'PhotoController');
@@ -87,3 +91,7 @@ Route::group(['prefix'=>'admin','namespace'=>"Admin","middleware"=>"auth"],funct
         Route::post("update-order/{id}", ['as' => 'post-edit-order', 'uses' => 'OrderController@updateOrder']);
     });
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
